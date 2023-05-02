@@ -1,0 +1,12 @@
+services:
+
+  gatling-runner:
+    container_name: gatling-runner
+    image: maven:3.9-eclipse-temurin-20
+    restart: on-failure
+    working_dir: /code
+    volumes:
+      - .:/code
+      - ~/.m2:/root/.m2
+    tty: true
+    command: mvn gatling:test -Dgatling.simulationClass=it.zerko.simulation.F1FantasyToolsSimulation
