@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/code
       - ~/.m2:/root/.m2
-    command: mvn gatling:test -Dgatling.simulationClass=it.zerko.simulation.F1FantasyToolsSimulation
+    command: mvn gatling:test -T 1C -Dgatling.simulationClass=it.zerko.simulation.F1FantasyToolsSimulation
