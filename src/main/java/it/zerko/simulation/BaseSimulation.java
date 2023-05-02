@@ -12,7 +12,11 @@ public abstract class BaseSimulation extends Simulation {
 
 
   protected BaseSimulation() {
-    HttpProtocolBuilder httpProtocol = HttpDsl.http.shareConnections();
+    HttpProtocolBuilder httpProtocol = HttpDsl.http;
+
+    if (Config.shareConnections()) {
+      httpProtocol.shareConnections();
+    }
 
     ScenarioBuilder scenarioBuilder = scenarioBuilder();
 

@@ -13,6 +13,10 @@ public class Config {
     return 10;
   }
 
+  public boolean shareConnections() {
+    return false;
+  }
+
   public int durationInSeconds() {
     return 60;
   }
